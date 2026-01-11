@@ -1,7 +1,7 @@
 {
   "name": "youtube-no-comments",
-  "version": "1.0.0",
-  "description": "A Chrome Extension that hides the comment section on YouTube videos and Shorts.",
+  "version": "1.1.0",
+  "description": "A Chrome Extension that hides comments on YouTube videos, Shorts, and live chat on streams.",
   "main": "content.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

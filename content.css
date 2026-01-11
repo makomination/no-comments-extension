@@ -1,6 +1,7 @@
 /* ========================================
    YouTube No Comments
-   Hides comments on regular videos and Shorts
+   Hides comments on regular videos and Shorts,
+   and live chat on streams
    ======================================== */
 
 /* Applied only when comment hiding is enabled */
@@ -36,4 +37,29 @@ body.ync-hide-comments ytd-shorts ytd-engagement-panel-section-list-renderer,
 body.ync-hide-comments #shorts-container ytd-engagement-panel-section-list-renderer,
 body.ync-hide-comments ytd-engagement-panel-section-list-renderer[target-id="engagement-panel-comments-section"] {
   display: none !important;
+}
+
+/* --- YouTube Live chat section --- */
+
+/* Hide chat elements */
+body.ync-hide-comments #chat-container.ytd-watch-flexy,
+body.ync-hide-comments ytd-live-chat-frame#chat,
+body.ync-hide-comments #panels-full-bleed-container.ytd-watch-flexy {
+  display: none !important;
+}
+
+/* Reclaim space from hidden chat */
+body.ync-hide-comments #secondary.ytd-watch-flexy {
+  padding: 0 !important;
+}
+
+body.ync-hide-comments #columns.ytd-watch-flexy {
+  padding-right: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Expand video to fill available width */
+body.ync-hide-comments ytd-watch-flexy[is-two-columns_] #primary.ytd-watch-flexy,
+body.ync-hide-comments ytd-watch-flexy[flexy_][is-two-columns_] #columns.ytd-watch-flexy {
+  max-width: none !important;
 }
