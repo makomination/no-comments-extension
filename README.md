@@ -1,4 +1,4 @@
-# YouTube No Comments
+# No Comments Extension
 
 A Chrome Extension that hides the comment section on YouTube videos, Shorts, and live chat on streams.
 
@@ -26,7 +26,7 @@ A Chrome Extension that hides the comment section on YouTube videos, Shorts, and
 ## File Structure
 
 ```
-youtube-no-comments/
+no-comments-extension/
 ├── manifest.json      # Extension configuration
 ├── content.css        # Comment hiding styles
 ├── content.js         # Settings application script

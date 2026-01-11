@@ -1,4 +1,4 @@
-// YouTube No Comments - Content Script
+// No Comments Extension - Content Script
 
 (function() {
   'use strict';
@@ -10,7 +10,7 @@
   function init() {
     chrome.storage.sync.get({ hideComments: false }, (result) => {
       if (chrome.runtime.lastError) {
-        console.error('[YouTube No Comments] Failed to load settings:', chrome.runtime.lastError.message);
+        console.error('[No Comments Extension] Failed to load settings:', chrome.runtime.lastError.message);
         applySettings(false); // Fallback: show comments on error
         return;
       }

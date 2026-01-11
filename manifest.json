@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "YouTube No Comments",
+  "name": "No Comments Extension",
   "version": "1.1.0",
   "description": "Hides comments on YouTube videos, Shorts, and live chat on streams",
   "minimum_chrome_version": "105",
