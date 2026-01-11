@@ -3,8 +3,22 @@
 (function() {
   'use strict';
 
+  function closeShortsCommentPanel() {
+    // Find and click close button on any open Shorts comment panel
+    const panel = document.querySelector(
+      'ytd-engagement-panel-section-list-renderer[target-id="engagement-panel-comments-section"][visibility="ENGAGEMENT_PANEL_VISIBILITY_EXPANDED"]'
+    );
+    if (panel) {
+      const closeBtn = panel.querySelector('#visibility-button button, yt-button-shape button');
+      if (closeBtn) closeBtn.click();
+    }
+  }
+
   function applySettings(hideComments) {
     document.body.classList.toggle('ync-hide-comments', hideComments);
+    if (hideComments) {
+      closeShortsCommentPanel();
+    }
   }
 
   function init() {
