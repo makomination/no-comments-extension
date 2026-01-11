@@ -1,0 +1,39 @@
+/* ========================================
+   YouTube No Comments
+   Hides comments on regular videos and Shorts
+   ======================================== */
+
+/* Applied only when comment hiding is enabled */
+body.ync-hide-comments ytd-comments#comments,
+body.ync-hide-comments #comments.ytd-watch-flexy {
+  display: none !important;
+}
+
+body.ync-hide-comments ytd-engagement-panel-section-list-renderer[target-id="engagement-panel-comments-section"] {
+  display: none !important;
+}
+
+/* --- Shorts comment section --- */
+
+body.ync-hide-comments button-view-model:has(button[aria-label*="comment"]),
+body.ync-hide-comments button-view-model:has(button[aria-label*="Comment"]),
+body.ync-hide-comments button-view-model:has(button[aria-label*="コメント"]) {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+body.ync-hide-comments ytd-shorts #comments-button,
+body.ync-hide-comments ytd-reel-video-renderer #comments-button,
+body.ync-hide-comments #comments-button.ytd-reel-player-overlay-renderer,
+body.ync-hide-comments ytd-reel-player-overlay-renderer #comments-button,
+body.ync-hide-comments ytd-button-renderer#comments-button,
+body.ync-hide-comments ytd-shorts ytd-button-renderer#comments-button {
+  display: none !important;
+  pointer-events: none !important;
+}
+
+body.ync-hide-comments ytd-shorts ytd-engagement-panel-section-list-renderer,
+body.ync-hide-comments #shorts-container ytd-engagement-panel-section-list-renderer,
+body.ync-hide-comments ytd-engagement-panel-section-list-renderer[target-id="engagement-panel-comments-section"] {
+  display: none !important;
+}
