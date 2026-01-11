@@ -4,15 +4,16 @@
   'use strict';
 
   function applySettings(hideComments) {
-    if (hideComments) {
-      document.body.classList.add('ync-hide-comments');
-    } else {
-      document.body.classList.remove('ync-hide-comments');
-    }
+    document.body.classList.toggle('ync-hide-comments', hideComments);
   }
 
   function init() {
-    chrome.storage.sync.get({ hideComments: true }, (result) => {
+    chrome.storage.sync.get({ hideComments: false }, (result) => {
+      if (chrome.runtime.lastError) {
+        console.error('[YouTube No Comments] Failed to load settings:', chrome.runtime.lastError.message);
+        applySettings(false); // Fallback: show comments on error
+        return;
+      }
       applySettings(result.hideComments);
     });
   }

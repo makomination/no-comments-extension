@@ -3,6 +3,7 @@
   "name": "YouTube No Comments",
   "version": "1.0.0",
   "description": "Hides the comment section on YouTube videos and Shorts",
+  "minimum_chrome_version": "105",
   "permissions": ["storage"],
   "host_permissions": ["*://*.youtube.com/*"],
   "content_scripts": [

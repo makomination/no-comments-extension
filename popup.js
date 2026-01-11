@@ -1,11 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.getElementById('toggle');
 
-  chrome.storage.sync.get({ hideComments: true }, (result) => {
+  chrome.storage.sync.get({ hideComments: false }, (result) => {
+    if (chrome.runtime.lastError) {
+      console.error('[YouTube No Comments] Failed to load settings:', chrome.runtime.lastError.message);
+      return;
+    }
     toggle.checked = result.hideComments;
   });
 
   toggle.addEventListener('change', () => {
-    chrome.storage.sync.set({ hideComments: toggle.checked });
+    chrome.storage.sync.set({ hideComments: toggle.checked }, () => {
+      if (chrome.runtime.lastError) {
+        console.error('[YouTube No Comments] Failed to save settings:', chrome.runtime.lastError.message);
+      }
+    });
   });
 });
